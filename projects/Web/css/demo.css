@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+	background: #000;
+	overflow: hidden;
+	font-size: 0.85rem;
+}
+
+.demo-1 {
+	color: #d1ac00;
+}
+
+.demo-2 {
+	color: #5b0ff5;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #333;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+
+
+/* Content */
+.content {
+	padding: 3em 0;
+}
+
+.content.main {
+	min-height: 100vh; 
+	padding: 0;
+}
+
+.canvas-wrapper {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+canvas {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%; 
+}
+
+
+@keyframes noiseLoad {
+	from {
+		transform: scale(0);
+		background: rgb(255, 255, 255);
+	}
+	
+	to {
+		transform: scale(1);
+		background: rgb(0, 0, 0);
+		
+	}
+}
+
+#uploading-animation {
+	display: none;
+}
+
+#uploading-animation.is-visible {
+	display: block;
+}
+
+
+.upload-btn::before {
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: currentColor;
+	position: absolute;
+	bottom: 2vmax;   
+	border: 1px solid;
+	width: 255px;
+	content: 'Upload your track';
+	display: inline-block;  
+	left: 2vmax;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+}
+
+.upload-btn:hover::before {
+	color: #fff;
+}
+
+
+
+.startScreen {
+	position: absolute;
+	z-index: 1;
+	color: transparent;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.header {
+	position: absolute;
+	z-index: 2;
+	top: 44%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 6em;
+	font-weight: 600;
+	letter-spacing: -.06em;
+}
+.toggle-btn {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	position: absolute;
+	z-index: 1;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.5em;
+	color: white;
+	background: rgba(2,7,60,0);
+	border: 2px solid #fff;
+	padding: .8em 2em;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+.toggle-btn:hover {
+	cursor: pointer;
+	background: rgba(255,255,255,1);
+	color: #02073c;
+	transition: all .2s ease;
+}
+
+
+.p5_1_loading {
+	background: #004643;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+.p5_2_loading {
+	background: #726a95;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+
+.next-btn{	
+	padding: 10px;
+	position: absolute;
+	z-index: 2;
+	bottom: 2vmax;
+	color: currentColor;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	width: 255px;
+	border: 1px solid;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	right: 2vmax;
+	text-align: center;
+	display: inline-block;  
+	cursor: pointer;
+		
+}
+
+
+.next-btn:hover::before{
+	color: #fff;
+}
